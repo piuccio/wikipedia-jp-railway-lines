@@ -2,7 +2,7 @@
   "name": "wikipedia-jp-railway-lines",
   "version": "1.0.0",
   "description": "List of Japanese railway lines extracted from Wikipedia",
-  "main": "index.js",
+  "main": "lines.json",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon --watch index.js"
