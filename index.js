@@ -57,6 +57,8 @@ async function generateWikipediaList() {
     const { query } = JSON.parse(body);
     query.pages.forEach((page) => {
       const { title, extract = '', langlinks = [] } = page;
+      // Because of redirects we might end up with duplicates
+      if (wikipages.find((p) => p.title === title)) return;
       const enLangLink = langlinks.find((lang) => lang.lang === 'en') || {};
 
       if (!extract) console.log(`${title} does not have an extract`);
@@ -70,7 +72,7 @@ async function generateWikipediaList() {
 
       wikipages.push({
         title,
-        extract,
+        extract: extract ? extract.trim() : '',
         hiragana,
         english: englishName,
         page: `https://ja.wikipedia.org/wiki/${title}`,

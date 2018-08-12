@@ -9,8 +9,9 @@
   },
   "author": "Fabio Crisci",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "got": "^9.0.0",
+    "html-to-json-data": "^1.5.1",
     "japan-train-data": "^0.6.0",
     "split-array": "^1.0.1"
   }
